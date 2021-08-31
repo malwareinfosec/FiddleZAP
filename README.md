@@ -14,17 +14,16 @@ It should have the following structure:
 
 - Click on the Load script icon: 
 
-
+![image](https://user-images.githubusercontent.com/25351665/131580293-a2a603ad-c723-4c5d-b19b-3ee9c99a8480.png)
 
 - Select the following parameters:
 
+![image](https://user-images.githubusercontent.com/25351665/131580345-04c22bb1-ba30-4622-ba50-01e1ac6136fa.png)
 
+The FiddleZAP script should now show up under Passive Rules. If it is not enabled, right-click on it and select Enable script.
 
-The FiddleZAP script should now show up under Passive Rules
+![image](https://user-images.githubusercontent.com/25351665/131580409-0e58660b-96cc-4373-b94b-d2bcb316d2de.png)
 
-
-
-If it is not enabled, right-click on it and select Enable script.
 
 # Features
 
