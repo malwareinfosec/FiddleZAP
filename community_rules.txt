@@ -1,0 +1,33 @@
+# These are the community regexes for OWASP ZAP
+#
+# Last updated on: 
+#
+# The syntax is as follows:
+#
+# alertType:[type of rule]; alertTitle:""; alertRegex://; alertColor:""; alertRisk:[integer]; alertConfidence:[integer]; alertDesc:""; alertSolution:""; alertReference:""; alertCweId:[integer]; alertWascId:[integer]
+#
+# alertType:[SourceCode/URI]
+# alertTitle:"A short name for the threat"
+# alertRegex:/[a-Z]/
+# alertColor:"" // in Hex (i.e. 0xEA9999)
+# alertRisk:[integer] // risk: 0: info, 1: low, 2: medium, 3: high
+# alertConfidence:[integer] // confidence: 0: falsePositive, 1: low, 2: medium, 3: high, 4: confirmed
+# alertDesc:"A short description of the threat"
+# alertSolution:"A short description of possible mitigations"
+# alertReference:"https://myrefence.com"
+# alertCweId:[integer]
+# alertWascId:[integer]
+
+# Exploit kits
+
+alertType:URI; alertTitle:"RIGEK"; alertRegex:/^https?:\/\/[^\x3f]+\/\x3f[^\x3f]+Q[cdM][_fPrv][bDfLPTWXjn][acdefYZVUb][abKLJ][^\n]+$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"RIG exploit kit traffic"; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
+
+alertType:URI; alertTitle:"PurpleFoxEK"; alertRegex:/^http(s|):\/\/(?!www)[^.]([a-z0-9-]+\.){2}[a-z]{2,7}\/news/((crypto-js|zepto|aes|base64)\.min\.js|dl\.php\?key=[0-9])$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"PurpleFox exploit kit traffic"; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
+
+# Magecart skimmers
+
+alertType:SourceCode; alertTitle:"Magecart (Q_logger)"; alertRegex:/var\s\w=\{isOpen:!1,orientation:void\s0,detectInterval:null\}/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
+
+alertType:SourceCode; alertTitle:"Magecart (Fake Clicky)"; alertRegex:/=','script','Y2hlY2tvdXQ=',/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
+
+

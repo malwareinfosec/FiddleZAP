@@ -1,0 +1,17 @@
+# These are the user regexes for OWASP ZAP
+#
+# The syntax is as follows:
+#
+# alertType:[type of rule]; alertTitle:""; alertRegex://; alertColor:""; alertRisk:[integer]; alertConfidence:[integer]; alertDesc:""; alertSolution:""; alertReference:""; alertCweId:[integer]; alertWascId:[integer]
+# alertType:[SourceCode/URI]
+# alertTitle:"A short name for the threat"
+# alertRegex:/[a-Z]/
+# alertColor:"" // in Hex (i.e. 0xEA9999)
+# alertRisk:[integer] // risk: 0: info, 1: low, 2: medium, 3: high
+# alertConfidence:[integer] // confidence: 0: falsePositive, 1: low, 2: medium, 3: high, 4: confirmed
+# alertDesc:"A short description of the threat"
+# alertSolution:"A short description of possible mitigations"
+# alertReference:"https://myrefence.com"
+# alertCweId:[integer]
+# alertWascId:[integer]
+
