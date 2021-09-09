@@ -18,7 +18,7 @@ It should have the following structure:
 
 - Select the following parameters:
 
-![image](https://user-images.githubusercontent.com/25351665/132749459-d9fc70ab-9a0c-49a6-95c0-d64f4589fee7.png)
+![image](https://user-images.githubusercontent.com/25351665/132750572-7cfa0fdd-9204-4d12-8c1e-7250c87c7577.png)
 
 - It now shows under standalone:
 
@@ -32,7 +32,7 @@ It should have the following structure:
 
 - Select the following parameters:
 
-![image](https://user-images.githubusercontent.com/25351665/132750060-9180df3b-0291-44f1-b294-ae6ede7c9eb7.png)
+![image](https://user-images.githubusercontent.com/25351665/132750390-4789935d-cc73-4f6f-a6b0-3f251d5bd72c.png)
 
 The FiddleZAP script should now show up under Passive Rules. If it is not enabled, right-click on it and select Enable script.
 
