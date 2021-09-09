@@ -6,7 +6,7 @@ With ZAP as your web proxy, you are able to flag malicious traffic based on pred
 
 Example: Alert and highlighting when a regex matches on a string within the HTML source code of a compromised website
 
-![image](https://user-images.githubusercontent.com/25351665/132754670-ceb6faa0-1ce1-4e1c-8f44-bf21ef699448.png)
+![image](https://user-images.githubusercontent.com/25351665/132754774-bd5278ee-dad4-4107-bfa5-472b777fd52e.png)
 
 ![image](https://user-images.githubusercontent.com/25351665/132754478-ad225161-0f66-4cc7-903b-73c89817e737.png)
 
