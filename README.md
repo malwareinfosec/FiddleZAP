@@ -2,6 +2,8 @@
 
 FiddleZAP is a simplified version of [EKFiddle](https://github.com/malwareinfosec/EKFiddle) for OWASP ZAP written for the Graal.js engine.
 
+There are 2 scripts (standalone, passive rules). The former is used to run manually on the currently loaded session (web traffic), the latter automatically runs while recording traffic.
+
 # Installation
 
 - Download and install ZAP: https://www.zaproxy.org/download/
@@ -10,7 +12,13 @@ FiddleZAP is a simplified version of [EKFiddle](https://github.com/malwareinfose
 
 It should have the following structure:
 
+![image](https://user-images.githubusercontent.com/25351665/132750706-3965d2cb-5834-4144-bd15-3115c0dd3a67.png)
+
+![image](https://user-images.githubusercontent.com/25351665/132750818-9ec7bbea-deff-41b0-abac-15b645768e57.png)
+
 ## Stand Alone
+
+First, install the standalone script:
 
 - Click on the Load script icon:
 
@@ -25,6 +33,8 @@ It should have the following structure:
 ![image](https://user-images.githubusercontent.com/25351665/132749556-ae47b44b-d595-4e51-9ee4-f86815eeaf9b.png)
 
 ## Passive Rules
+
+Next, install the passive rules script:
 
 - Click on the Load script icon:
 
