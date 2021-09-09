@@ -1,6 +1,10 @@
 # FiddleZAP
 
-FiddleZAP is a simplified version of [EKFiddle](https://github.com/malwareinfosec/EKFiddle) for OWASP ZAP written for the Graal.js engine.
+FiddleZAP is a simplified version of [EKFiddle](https://github.com/malwareinfosec/EKFiddle) for OWASP ZAP. 
+
+Use case: With ZAP as your web proxy, you are able to flag malicious traffic based on predefined regular expressions.
+
+Example: Alert and highlighting when a regex matches on a string within the HTML source code of a compromised website
 
 ![image](https://user-images.githubusercontent.com/25351665/132751916-8258a872-988f-4041-9b5e-159b38055b16.png)
 
