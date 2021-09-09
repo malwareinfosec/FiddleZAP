@@ -1,4 +1,4 @@
-# These are the community regexes for OWASP ZAP
+# This is a sample of regexes for OWASP ZAP
 #
 # Last updated on: 
 #
@@ -23,6 +23,7 @@
 alertType:URI; alertTitle:"RIGEK"; alertRegex:/^https?:\/\/[^\x3f]+\/\x3f[^\x3f]+Q[cdM][_fPrv][bDfLPTWXjn][acdefYZVUb][abKLJ][^\n]+$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"RIG exploit kit traffic"; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
 
 alertType:URI; alertTitle:"PurpleFoxEK"; alertRegex:/^http(s|):\/\/(?!www)[^.]([a-z0-9-]+\.){2}[a-z]{2,7}\/news/((crypto-js|zepto|aes|base64)\.min\.js|dl\.php\?key=[0-9])$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"PurpleFox exploit kit traffic"; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
+
 
 # Magecart skimmers
 
