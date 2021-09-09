@@ -5,10 +5,9 @@ FiddleZAP is a simplified version of [EKFiddle](https://github.com/malwareinfose
 With ZAP as your web proxy, you are able to flag malicious traffic based on predefined regular expressions.
 
 Example: Alert and highlighting when a regex matches on a string within the HTML source code of a compromised website
+![image](https://user-images.githubusercontent.com/25351665/132754607-c28e24a3-ffbd-48ab-bfa0-cdbe08b497ce.png)
 
-![image](https://user-images.githubusercontent.com/25351665/132751916-8258a872-988f-4041-9b5e-159b38055b16.png)
-
-![image](https://user-images.githubusercontent.com/25351665/132752952-2a9edfa1-6f9e-4c44-8bee-1e24d285e317.png)
+![image](https://user-images.githubusercontent.com/25351665/132754478-ad225161-0f66-4cc7-903b-73c89817e737.png)
 
 There are 2 scripts (standalone, passive rules). The former is used to run manually on the currently loaded session (web traffic), the latter automatically runs while recording traffic.
 
