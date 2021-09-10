@@ -66,6 +66,9 @@ Rules for FiddleZAP can look for URI patterns and source code patterns (session 
 
 - The ``user_rules.txt`` is your own rules file.
 
+Rules are automatically loaded and used to scan incoming traffic (if Passive Rules script is enabled). If you want to run rules on previously captured traffic, you need to run the standalone script.
+
+![image](https://user-images.githubusercontent.com/25351665/132890280-e1322936-38f8-4735-b003-b27a8c166c87.png)
 
 ## Color coding and tagging of matching web sessions
 
