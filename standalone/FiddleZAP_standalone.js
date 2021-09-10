@@ -1,5 +1,6 @@
-// FiddleZAP is a simplified version of EKFiddle for OWASP ZAP written for the Graal.js engine.
+// FiddleZAP is a simplified version of EKFiddle for OWASP ZAP
 // This is the standalone script
+// version: 0.0.1
 
 // Declare global variables
 var extNeon = org.parosproxy.paros.control.Control.getSingleton().getExtensionLoader().getExtension("ExtensionNeonMarker");
