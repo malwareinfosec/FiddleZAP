@@ -1,4 +1,6 @@
-// FiddleZAP is a simplified version of EKFiddle for OWASP ZAP written for the Graal.js engine.
+// FiddleZAP is a simplified version of EKFiddle for OWASP ZAP
+// This is the passive rules script
+// version: 0.0.1
 
 // Declare global variables
 var PluginPassiveScanner = Java.type("org.zaproxy.zap.extension.pscan.PluginPassiveScanner");
