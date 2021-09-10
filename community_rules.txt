@@ -32,3 +32,6 @@ alertType:SourceCode; alertTitle:"Magecart (Q_logger)"; alertRegex:/var\s\w=\{is
 alertType:SourceCode; alertTitle:"Magecart (Fake Clicky)"; alertRegex:/=','script','Y2hlY2tvdXQ=',/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
 
 
+# CVEs
+
+alertType:SourceCode; alertTitle:"CVE-2021-40444"; alertRegex:/(':\.'\+'\.\/'\+'\.{2}\/'\+'\.{2}'\+'\/\.'\+'\.\/\.{2}\/)|(\.cpl:(\.{2}/){5})/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"CVE-2021-40444"; alertSolution:""; alertReference:"https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-40444"; alertCweId:0; alertWascId:0
