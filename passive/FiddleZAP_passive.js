@@ -1,6 +1,6 @@
 // FiddleZAP is a simplified version of EKFiddle for OWASP ZAP
 // This is the passive rules script
-// version: 0.0.1
+// version: 0.0.2
 
 // Declare global variables
 var PluginPassiveScanner = Java.type("org.zaproxy.zap.extension.pscan.PluginPassiveScanner");
@@ -129,6 +129,7 @@ function scan(ps, msg, src) {
                         rulesArray[i].alertDesc,
                         rulesArray[i].alertRegex.source,
                         rulesArray[i].alertSolution,
+						rulesArray[i].alertReference,
                         rulesArray[i].alertCweId,
                         rulesArray[i].alertWascId)
                 }
@@ -153,6 +154,7 @@ function scan(ps, msg, src) {
                         rulesArray[i].alertDesc,
                         rulesArray[i].alertRegex.source,
                         rulesArray[i].alertSolution,
+						rulesArray[i].alertReference,
                         rulesArray[i].alertCweId,
                         rulesArray[i].alertWascId)
                 }
@@ -188,7 +190,7 @@ function loadScriptFromFile(file) {
     return new String(Files.readAllBytes(filePath), 'UTF-8');
 }
 
-function tagAlert(ps, alertTitle, hostname, alertRisk, alertConfidence, alertDesc, alertRegex, alertSolution, alertCweId, alertWascId) {
+function tagAlert(ps, alertTitle, hostname, alertRisk, alertConfidence, alertDesc, alertRegex, alertSolution, alertReference, alertCweId, alertWascId) {
     ps.addTag(alertTitle);
     if (extNeon != null) {
         extNeon.addColorMapping(alertTitle, alertColor);
