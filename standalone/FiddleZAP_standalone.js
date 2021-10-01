@@ -1,6 +1,6 @@
 // FiddleZAP is a simplified version of EKFiddle for OWASP ZAP
 // This is the standalone script
-// version: 0.0.1
+// version: 0.0.2
 
 // Declare global variables
 var extNeon = org.parosproxy.paros.control.Control.getSingleton().getExtensionLoader().getExtension("ExtensionNeonMarker");
@@ -105,7 +105,7 @@ function listChildren(node, level) {
             // Call URI regexes function
             URIRegexes(rulesArray[i].alertType, rulesArray[i].alertRegex, currentId, uri, 
              rulesArray[i].alertTitle, hostname, rulesArray[i].alertRisk, rulesArray[i].alertConfidence,
-             rulesArray[i].alertDesc, rulesArray[i].alertSolution, rulesArray[i].alertCweId, rulesArray[i].alertWascId);
+             rulesArray[i].alertDesc, rulesArray[i].alertSolution, rulesArray[i].alertReference, rulesArray[i].alertCweId, rulesArray[i].alertWascId);
 
             // Call SourceCode regexes function
             responseLength = msg.getResponseBody().length();
@@ -113,7 +113,7 @@ function listChildren(node, level) {
                 responseBody = msg.getResponseBody().toString();
                 SourceCodeRegexes(responseBody, rulesArray[i].alertType, rulesArray[i].alertRegex, currentId, uri,
                  rulesArray[i].alertTitle, hostname, rulesArray[i].alertRisk, rulesArray[i].alertConfidence,
-                 rulesArray[i].alertDesc, rulesArray[i].alertSolution, rulesArray[i].alertCweId, rulesArray[i].alertWascId);
+                 rulesArray[i].alertDesc, rulesArray[i].alertSolution, rulesArray[i].alertReference, rulesArray[i].alertCweId, rulesArray[i].alertWascId);
             }
         }
 
@@ -137,7 +137,7 @@ function loadScriptFromFile(file) {
 }
 
 function tagAlert(hr, alertType, alertRegex, currentId, uri, alertTitle, hostname,
- alertRisk, alertConfidence, alertDesc, alertSolution, alertCweId, alertWascId) {
+ alertRisk, alertConfidence, alertDesc, alertSolution, alertReference, alertCweId, alertWascId) {
     hr.addTag(alertTitle);
     if (extNeon != null) {
         extNeon.addColorMapping(alertTitle, alertColor);
@@ -148,13 +148,14 @@ function tagAlert(hr, alertType, alertRegex, currentId, uri, alertTitle, hostnam
         alert.setMessage(msg)
         alert.setUri(msg.getRequestHeader().getURI().toString())
         alert.setDescription(alertDesc);
+		alert.setReference(alertReference);
         alert.setEvidence(alertRegex.toString())
         extensionAlert.alertFound(alert, hr)
     }
 }
 
 function URIRegexes(alertType, alertRegex, currentId, uri, alertTitle, hostname,
- alertRisk, alertConfidence, alertDesc, alertSolution, alertCweId, alertWascId) {
+ alertRisk, alertConfidence, alertDesc, alertSolution, alertReference, alertCweId, alertWascId) {
     // Check for URI in url
     if (alertType == "URI") {
         if (alertRegex.test(uri)) {
@@ -170,14 +171,14 @@ function URIRegexes(alertType, alertRegex, currentId, uri, alertTitle, hostname,
             // Call function to tag and alert
             hr = extHist.getHistoryReference(currentId);
             tagAlert(hr, alertType, alertRegex, currentId, uri, alertTitle, hostname, alertRisk,
-             alertConfidence, alertDesc, alertSolution, alertCweId, alertWascId);
+             alertConfidence, alertDesc, alertSolution, alertReference, alertCweId, alertWascId);
 
         }
     }
 }
 
 function SourceCodeRegexes(responseBody, alertType, alertRegex, currentId, uri, alertTitle, hostname,
- alertRisk, alertConfidence, alertDesc, alertSolution, alertCweId, alertWascId) {
+ alertRisk, alertConfidence, alertDesc, alertSolution, alertReference, alertCweId, alertWascId) {
     // Check for SourceCode in responseBody
     if (alertType == "SourceCode") {
         if (alertRegex.test(responseBody)) {
@@ -193,7 +194,7 @@ function SourceCodeRegexes(responseBody, alertType, alertRegex, currentId, uri, 
             // Call function to tag and alert
             hr = extHist.getHistoryReference(currentId);
             tagAlert(hr, alertType, alertRegex, currentId, uri, alertTitle, hostname, alertRisk,
-             alertConfidence, alertDesc, alertSolution, alertCweId, alertWascId);
+             alertConfidence, alertDesc, alertSolution, alertReference, alertCweId, alertWascId);
 
         }
     }
