@@ -1,6 +1,4 @@
-# This is a sample of regexes for OWASP ZAP
-#
-# Last updated on: 
+# These are community regexes for OWASP ZAP
 #
 # The syntax is as follows:
 #
@@ -18,18 +16,44 @@
 # alertCweId:[integer]
 # alertWascId:[integer]
 
+
+## Social engineering (malware)
+
+alertType:SourceCode; alertTitle:"FakeUpdates (hacked site)"; alertRegex:/\("cmVmZXJyZXI="\)\]\|\|'';/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://blog.malwarebytes.com/threat-analysis/2018/04/fakeupdates-campaign-leverages-multiple-website-platforms/"; alertCweId:0; alertWascId:0
+alertType:URI; alertTitle:"FakeUpdates (domain shadowing)"; alertRegex:/(report\?r=dj\w+ZjaWQ9Mj)|(report\?r=Y2lkPTI(1|2)M)/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://blog.malwarebytes.com/threat-analysis/2018/04/fakeupdates-campaign-leverages-multiple-website-platforms/"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"FakeCertificate Campaign"; alertRegex:/\[0\].appendChild\(jspp22\);|\/\/chrome.html\\">"\s\+\s"<\/frameset>";|IaNeUmeiuVNaming/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://twitter.com/MBThreatIntel/status/1439995792693944324?s=20"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Gootloader"; alertRegex:/j\$k([0-9]{1,10})j\$k/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://news.sophos.com/en-us/2021/08/12/gootloaders-mothership-controls-malicious-content/"; alertCweId:0; alertWascId:0
+
+
+## Social engineering (scams)
+
+alertType:SourceCode; alertTitle:"Fake jQuery Campaign"; alertRegex:/\\x73\\x6A\\x2E\\x79\\x72\\x65\\x75\\x71\\x6A\\x2/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://blog.sucuri.net/2017/04/wordpress-security-unwanted-redirects-via-infected-javascript-files.html"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"LNKR Campaign"; alertRegex:/lat\?jsonp=__[a-z]{3}_cb_[0-9]{9}&(#|amp)|addons\/lnkr30_nt\.min\.js/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://twitter.com/baberpervez2/status/1194090555468394496?s=20"; alertCweId:0; alertWascId:0
+
+
+# Magecart
+
+alertType:SourceCode; alertTitle:"Magecart (Q_logger)"; alertRegex:/var\s\w=\{isOpen:!1,orientation:void\s0,detectInterval:null\}/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://twitter.com/AffableKraut/status/1385030485676544001?s=20"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (Fake Clicky)"; alertRegex:/=','script','Y2hlY2tvdXQ=',/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://twitter.com/GroupIB_GIB/status/1185237251762069504?s=20"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (Google loop)"; alertRegex:/l1l1<userID\.length;l1l1\+\+/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://twitter.com/AffableKraut/status/1261157021027622912?s=20"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (CoffeMokko)"; alertRegex:/\w\[\w\]=\s\w\[\w\];\w\[\w\]=\s\w;\w=\s\(\w\+\s\w\)%\s\d{7}/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://blog.group-ib.com/coffemokko"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (Radix)"; alertRegex:/0a(0w){12}/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://blog.sucuri.net/2019/03/more-on-dnsden-biz-swipers-and-radix-obfuscation.html"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (svg)"; alertRegex:/[iI]d=?\(?"(facebook|google|twitter|instagram|youtube|pinterest)_full"(\sviewbox="0\s0|\);window\.q=e)/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://sansec.io/research/svg-malware"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (shell)"; alertRegex:/\$AJegUupT=/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://blog.malwarebytes.com/cybercrime/2021/05/newly-observed-php-based-skimmer-shows-ongoing-magecart-group-12-activity/"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (Magento footer)"; alertRegex:/function\sFN2Z22\(\)\{var/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/injecting-magecart-into-magento-global-config/"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (grelos)"; alertRegex:/var grelos_v=/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:"https://twitter.com/killamjr/status/1209165822939279365?s=20"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (Bom)"; alertRegex:/(,urll,true\))|(;urll=\s_0x)|(\];function\sboms\(\))|stats:btoa\(_0x/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"https://blog.malwarebytes.com/threat-analysis/2019/12/hundreds-of-counterfeit-online-shoe-stores-injected-with-credit-card-skimmer/"; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Magecart (57 gateways)"; alertRegex:/'1f1612164c041c515b1509011f0d03',\s'13101206530e1946'/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"https://sansec.io/research/polymorphic-skimmer-57-payment-gateways"; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
+
+
 # Exploit kits
 
-alertType:URI; alertTitle:"RIGEK"; alertRegex:/^https?:\/\/[^\x3f]+\/\x3f[^\x3f]+Q[cdM][_fPrv][bDfLPTWXjn][acdefYZVUb][abKLJ][^\n]+$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"RIG exploit kit traffic"; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
-
-alertType:URI; alertTitle:"PurpleFoxEK"; alertRegex:/^http(s|):\/\/(?!www)[^.]([a-z0-9-]+\.){2}[a-z]{2,7}\/news/((crypto-js|zepto|aes|base64)\.min\.js|dl\.php\?key=[0-9])$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"PurpleFox exploit kit traffic"; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
-
-
-# Magecart skimmers
-
-alertType:SourceCode; alertTitle:"Magecart (Q_logger)"; alertRegex:/var\s\w=\{isOpen:!1,orientation:void\s0,detectInterval:null\}/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
-
-alertType:SourceCode; alertTitle:"Magecart (Fake Clicky)"; alertRegex:/=','script','Y2hlY2tvdXQ=',/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:""; alertSolution:""; alertReference:""; alertCweId:0; alertWascId:0
+alertType:URI; alertTitle:"RIG EK"; alertRegex:/^https?:\/\/[^\x3f]+\/\x3f[^\x3f]+Q[cdM][_fPrv][bDfLPTWXjn][acdefYZVUb][abKLJ][^\n]+$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"RIG exploit kit traffic"; alertSolution:""; alertReference:"https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/rig-exploit-kit-diving-deeper-into-the-infrastructure/"; alertCweId:0; alertWascId:0
+alertType:URI; alertTitle:"PurpleFox EK"; alertRegex:/^http(s|):\/\/(?!www)[^.]([a-z0-9-]+\.){2}[a-z]{2,7}\/news/((crypto-js|zepto|aes|base64)\.min\.js|dl\.php\?key=[0-9])$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"PurpleFox exploit kit traffic"; alertSolution:""; alertReference:"https://www.trendmicro.com/en_ca/research/20/i/purple-fox-ek-relies-on-cloudflare-for-stability.html"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Spelevo EK"; alertRegex:/\s{5}\tvar p = '\w{50}/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"Spelevo exploit kit traffic"; alertSolution:""; alertReference:"https://blog.talosintelligence.com/2019/06/spelevo-exploit-kit.html"; alertCweId:0; alertWascId:0
+alertType:URI; alertTitle:"Underminer EK"; alertRegex:/^http(s|):\/\/(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}\/(views|js)\/[a-z0-9]{26}\.(html|swf|wav|jpg|js)$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"Underminer exploit kit traffic"; alertSolution:""; alertReference:"https://blog.malwarebytes.com/threat-analysis/2018/07/hidden-bee-miner-delivered-via-improved-drive-by-download-toolkit/"; alertCweId:0; alertWascId:0
+alertType:SourceCode; alertTitle:"Underminer EK"; alertRegex:/src="\/js\/(?=(.*\d){4})[a-z0-9]{26}\.js"><\/script>|TinyJSLibrary\.enc\.Hex\.parse\('[a-z0-9]{32}'\)\)\.toString\(TinyJSLibrary\.enc\.Utf8\)\);/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"Underminer exploit kit traffic"; alertSolution:""; alertReference:"https://blog.malwarebytes.com/threat-analysis/2018/07/hidden-bee-miner-delivered-via-improved-drive-by-download-toolkit/"; alertCweId:0; alertWascId:0
+alertType:URI; alertTitle:"Magnitude EK"; alertRegex:/^http:\/\/(?=(.*\d){4})(?=.*[a-zA-Z])[0-9a-zA-Z!@#$%]{8,}\.(?!contabo|edelkey|nitrado|online|libcice|unelink)[a-z]{6,7}\.(?!com)[a-z]{3,15}\/$/; alertColor:"0xEA9999"; alertRisk:3; alertConfidence:4; alertDesc:"Underminer exploit kit traffic"; alertSolution:""; alertReference:"https://malware.dontneedcoffee.com/2018/03/CVE-2018-4878.html"; alertCweId:0; alertWascId:0
 
 
 # CVEs
